@@ -1,6 +1,6 @@
 # PlaywrightFundamental3x
 
-A starter project for learning end-to-end testing with [Playwright](https://playwright.dev/).
+A hands-on collection of Playwright examples covering the fundamentals: the test runner, raw browser/context APIs, locators, network headers, and homework exercises against real demo sites.
 
 ## Prerequisites
 
@@ -31,7 +31,19 @@ npx playwright test --headed
 Run a single test file:
 
 ```bash
-npx playwright test tests/example.spec.ts
+npx playwright test tests/01_Basic/example.spec.ts
+```
+
+Run a specific test by title:
+
+```bash
+npx playwright test -g "has title"
+```
+
+List the tests Playwright will run without executing them:
+
+```bash
+npx playwright test --list
 ```
 
 ## Test Report
@@ -46,9 +58,18 @@ npx playwright show-report
 
 ```
 .
-├── tests/                 # Test specs
-│   └── example.spec.ts
-├── playwright.config.ts   # Playwright configuration
+├── tests/
+│   ├── 01_Basic/                  # Starter specs and raw Playwright API examples
+│   │   ├── example.spec.ts
+│   │   ├── multicontext.spec.ts
+│   │   └── normal.spec.ts
+│   ├── 03_Loc_command/            # Locators, referers, and navigation options
+│   │   ├── 01_loactor.spec.ts
+│   │   ├── 02-referer.spec.ts
+│   │   └── 03_fresh.spec.ts
+│   └── 04_locator_homework.spec.ts/
+│       └── 01_cura_app.spec.ts    # Login flow exercise (CURA demo app)
+├── playwright.config.ts           # Playwright configuration
 ├── package.json
 └── README.md
 ```
