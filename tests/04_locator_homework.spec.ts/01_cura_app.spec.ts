@@ -1,10 +1,13 @@
 import {test, expect} from "@playwright/test"
 
 test("Login on heraku app and verify the url and make payment text", async ({page})=> {
-    await page.goto("https://katalon-demo-cura.herokuapp.com/profile.php#login", {
+    // await page.goto("https://katalon-demo-cura.herokuapp.com/profile.php#login", {
+    //     waitUntil: "domcontentloaded",
+    //     timeout: 5000,
+    // })
+    await page.goto("https://www.irctc.co.in/nget/train-search", {
         waitUntil: "domcontentloaded",
-        timeout: 5000,
-    })
+    timeout: 5000})
    let  username = page.locator("#txt-username")
    await username.fill("John Doe")
    let pwd = page.locator("#txt-password")
